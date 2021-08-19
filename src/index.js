@@ -4,9 +4,9 @@ import App from './App';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from './reducers/index'
+import manageRestaurant from './reducers/manageRestaurant';
 
-let store = createStore(rootReducer)
+let store = createStore(manageRestaurant)
 
 
 ReactDOM.render(

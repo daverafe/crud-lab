@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Reviews from './Reviews';
-import cuid from 'cuid';
 
 
 class ReviewInput extends Component {
@@ -17,12 +16,7 @@ class ReviewInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const review ={
-      id: cuid(),
-      text: this.state.text,
-      restaurantId: this.props.restaurant.id 
-    }
-    this.props.addReview(review)
+    this.props.addReview({text: this.state.text, restaurantId: this.props.restaurantId})
     this.setState({
       text: ""
     })

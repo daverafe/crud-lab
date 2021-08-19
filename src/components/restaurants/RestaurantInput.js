@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import cuid from 'cuid';
 
 class RestaurantInput extends Component {
 
@@ -15,11 +14,7 @@ class RestaurantInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const restaurant = {
-      id: cuid(),
-      text: this.state.text
-    }
-    this.props.addRestaurant(restaurant)
+    this.props.addRestaurant(this.state.text)
     this.setState({
       text: ""
     })
